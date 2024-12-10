@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afpachec <afpachec@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 21:08:26 by afpachec          #+#    #+#             */
-/*   Updated: 2024/12/10 21:15:24 by afpachec         ###   ########.fr       */
+/*   Created: 2024/12/10 21:27:46 by afpachec          #+#    #+#             */
+/*   Updated: 2024/12/10 21:35:53 by afpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// printf("Hello from MiniTalk! :)\n");
-
 #include "includes/minitalk.h"
 
-t_server	*global_server(void)
+int	main(int argc, char **argv)
 {
-	static t_server	server;
-
-	return (&server);
-}
-
-int	main(void)
-{
-	global_server()->pid = getpid();
-	ft_putstr_fd("Server started.\nPID: ", 1);
-	ft_putnbr_fd(global_server()->pid, 1);
-	ft_putstr_fd("\n", 1);
+	(void)argv;
+	if (argc != 3)
+		return (ft_error(C_I_ARGS), 1);
+	ft_putstr_fd("Hello from client. :)\n", 1);
 }

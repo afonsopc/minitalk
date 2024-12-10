@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afpachec <afpachec@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 21:08:26 by afpachec          #+#    #+#             */
-/*   Updated: 2024/12/10 21:15:24 by afpachec         ###   ########.fr       */
+/*   Created: 2024/10/30 12:47:32 by afpachec          #+#    #+#             */
+/*   Updated: 2024/12/02 23:33:01 by afpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// printf("Hello from MiniTalk! :)\n");
+#include "../includes/libft.h"
 
-#include "includes/minitalk.h"
-
-t_server	*global_server(void)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
-	static t_server	server;
-
-	return (&server);
-}
-
-int	main(void)
-{
-	global_server()->pid = getpid();
-	ft_putstr_fd("Server started.\nPID: ", 1);
-	ft_putnbr_fd(global_server()->pid, 1);
-	ft_putstr_fd("\n", 1);
+	if (!s)
+		return (write(fd, "(nil)", 5));
+	return (write(fd, s, ft_strlen(s)));
 }

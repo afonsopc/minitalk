@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afpachec <afpachec@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 21:08:26 by afpachec          #+#    #+#             */
-/*   Updated: 2024/12/10 21:15:24 by afpachec         ###   ########.fr       */
+/*   Created: 2024/12/02 20:46:14 by afpachec          #+#    #+#             */
+/*   Updated: 2024/12/10 21:29:36 by afpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// printf("Hello from MiniTalk! :)\n");
+#include "../includes/libft.h"
 
-#include "includes/minitalk.h"
-
-t_server	*global_server(void)
+ssize_t	ft_error(char *message)
 {
-	static t_server	server;
-
-	return (&server);
-}
-
-int	main(void)
-{
-	global_server()->pid = getpid();
-	ft_putstr_fd("Server started.\nPID: ", 1);
-	ft_putnbr_fd(global_server()->pid, 1);
-	ft_putstr_fd("\n", 1);
+	if (!message)
+		return (ft_error("Is this Nierlicious or DIVINE intelect?"));
+	ft_putstr_fd("Error: ", 2);
+	ft_putstr_fd(message, 2);
+	ft_putstr_fd("\n", 2);
+	return (ft_strlen(message));
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server.c                                           :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afpachec <afpachec@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 21:08:26 by afpachec          #+#    #+#             */
-/*   Updated: 2024/12/10 21:15:24 by afpachec         ###   ########.fr       */
+/*   Created: 2024/12/10 21:11:35 by afpachec          #+#    #+#             */
+/*   Updated: 2024/12/10 21:32:19 by afpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// printf("Hello from MiniTalk! :)\n");
+#ifndef MINITALK_H
+# define MINITALK_H
 
-#include "includes/minitalk.h"
+# include "libft.h"
+# include <unistd.h>
 
-t_server	*global_server(void)
+# ifndef C_I_ARGS
+#  define C_I_ARGS "Invalid Arguments\nUsage: client [PID] [message]"
+# endif
+
+typedef struct s_server
 {
-	static t_server	server;
+	int	pid;
+}	t_server;
 
-	return (&server);
-}
-
-int	main(void)
-{
-	global_server()->pid = getpid();
-	ft_putstr_fd("Server started.\nPID: ", 1);
-	ft_putnbr_fd(global_server()->pid, 1);
-	ft_putstr_fd("\n", 1);
-}
+#endif
