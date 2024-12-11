@@ -2,7 +2,7 @@ NAME = minitalk
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_SRC = libft/ft_putstr_fd.c libft/ft_putnbr_fd.c libft/ft_strlen.c libft/ft_error.c
+LIBFT_SRC = libft/ft_putstr_fd.c libft/ft_putnbr_fd.c libft/ft_strlen.c libft/ft_error.c libft/ft_strtoi.c
 LIBFT_OBJ = $(LIBFT_SRC:.c=.o)
 LIBFT_LIB = lib/libft.a
 
