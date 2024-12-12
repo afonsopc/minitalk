@@ -6,7 +6,7 @@
 /*   By: afpachec <afpachec@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 21:11:35 by afpachec          #+#    #+#             */
-/*   Updated: 2024/12/11 13:01:03 by afpachec         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:55:18 by afpachec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ typedef struct s_server
 	int				pid;
 	unsigned int	curr_char;
 	int				curr_bit;
-	int				client_pid;
-	int				has_client;
+	char			*msg;
 }	t_server;
 
 typedef struct s_client
