@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_SRC = libft/ft_putstr_fd.c libft/ft_putnbr_fd.c libft/ft_strlen.c libft/ft_error.c libft/ft_strtoi.c libft/ft_kill.c
 LIBFT_OBJ = $(LIBFT_SRC:.c=.o)
-LIBFT_LIB = lib/libft.a
+LIBFT_LIB = libft.a
 
 all: $(NAME)
 $(NAME): $(LIBFT_LIB) server client
