@@ -48,7 +48,7 @@ void	handle_signals(int sig, t_server *server)
 	{
 		if (!server->curr_char)
 		{
-			server->msg = str_join_n(server->msg, "\n", 1);
+			server->msg = str_join_n(server->msg, "", 0);
 			if (server->msg)
 			{
 				if (ft_putstr_fd(server->msg, 1) < 0)
